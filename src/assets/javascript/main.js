@@ -42,7 +42,8 @@ const panes = $$('.panes-item');
 const sideBarTabs = $$('.js__sidebar-tabs');
 const containerPanes = $$('.js__container-panes');
 const slidersDiscover = $$('.container-discover__slider-item');
-const sideBarNextSong = $$('.js__sidebar-nextsong');
+// const sideBarNextSong = $$('.js__sidebar-nextsong');
+
 
 
 
@@ -543,100 +544,6 @@ const app = {
         });
     },
 
-
-    applyTheme: function() {
-        themeItems.forEach((themeItem, index) => {
-            themeItem.onclick = function() {
-                if (index == 0) {
-                    backgroundIndex = 0;
-                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
-                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
-                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
-                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/0.svg)';
-                    $('.main-music-control').style.backgroundImage = '';
-                    $('.main-music-control').style.backgroundColor = '#37075D';
-                    $('.mobile-tab').style.backgroundColor = '#37075D';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#411465';
-                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#4B206E';
-                    $('.header__width-search-sub').style.backgroundColor = '#6A39AF';
-                    $('.header__width-search-sub').classList.add('header__width-search-sub--purple');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--white');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--green');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--gray');
-                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
-                    $('.header__setting-list').style.backgroundColor = '#6A39AF';
-                    $('.theme-modal__body').style.backgroundColor = '#6A39AF';
-                    $('.nextsong__option-wrapper-history').style.backgroundColor = '#816399';
-                    $('.main-sidebar').style.backgroundColor = 'hsla(0,0%,100%,0.05)';
-                    $('.header__width-search-input').classList.remove('header__width-search-input--white');
-                    $('.header__width-search-input').classList.add('header__width-search-input--dark');
-                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#816399";
-                    $('.music__option-item.music__option-item--active').style.color = "#fff";
-                    $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-                    $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-
-                    $$('.js__main-color').forEach((item) => {
-                        item.style.color = '#fff';
-                    })
-                    $$('.js__sub-color').forEach((item) => {
-                        item.style.color = 'rgba(255, 255, 255, 0.5)';
-                    })
-                    $$('.js__backgroundColor').forEach((item) => {
-                        item.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-                    })
-                    $$('.js__border').forEach((item) => {
-                        item.style.border = "2px solid #fff";
-                    })
-                } else if (index == 1) {
-                    backgroundIndex = 1;
-                    $('.header').style.backgroundColor = `var(--header-color-${backgroundIndex})`;
-                    $('.header').style.boxShadow = '0 3px 5px rgba(0,0,0,0.1)';
-                    $('.main').style.backgroundImage = 'url(./assets/img/background-theme/backroundThemes/1.jpg)';
-                    $('.main-music-control').style.backgroundImage = 'none';
-                    $('.main-music-control').style.backgroundColor = '#202020';
-                    $('.mobile-tab').style.backgroundColor = '#202020';
-                    $('.sidebar__add-playlist').style.backgroundColor = '#333333';
-                    $('.sidebar__add-playlist').style.borderTop = '1px solid rgba(0, 0, 0, 0.1)';
-                    $('.nextsong__option-wrapper').style.backgroundColor = '#3E3E3E';
-                    $('.header__width-search-sub').style.backgroundColor = '#3E3E3E';
-                    $('.header__width-search-sub').classList.add('header__width-search-sub--gray');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--purple');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--white');
-                    $('.header__width-search-sub').classList.remove('header__width-search-sub--green');
-                    $('.header__width-search').classList.remove('js__gray-backgroundColor');
-                    $('.header__setting-list').style.backgroundColor = '#3E3E3E';
-                    $('.theme-modal__body').style.backgroundColor = '#3D3D3D';
-                    $('.nextsong__option-wrapper-history').style.backgroundColor = '#787878';
-                    $('.main-sidebar').style.backgroundColor = 'hsla(0,0%,100%,0.05)';
-                    $('.header__width-search-input').classList.remove('header__width-search-input--white');
-                    $('.header__width-search-input').classList.add('header__width-search-input--dark');
-                    $('.music__option-item.music__option-item--active').style.backgroundColor = "#787878";
-                    $('.music__option-item.music__option-item--active').style.color = "#fff";
-                    $('.music-control__volume-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-                    $('.music-control__progress-input').style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-
-                    $$('.js__main-color').forEach((item) => {
-                        item.style.color = '#fff';
-                    })
-                    $$('.js__sub-color').forEach((item) => {
-                        item.style.color = 'rgba(255, 255, 255, 0.5)';
-                    })
-                    $$('.js__backgroundColor').forEach((item) => {
-                        item.style.backgroundColor = "#3E3E3E";
-                    })
-                    $$('.js__border').forEach((item) => {
-                        item.style.border = "2px solid #fff";
-                    })
-                } 
-                
-                app.verifyOptionTextColor();
-            }
-        });
-    },
-
-
     // RENDER LIST MUSIC ITEM
     renderPlayList : function (playListElement, songsData) {
         const htmls = songsData.map((song, index) => {
@@ -1024,7 +931,6 @@ const app = {
             this.style.display = 'none';
         }
 
-
         // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART
         sideBarTabs.forEach((tab, index) => {
             tab.onclick = function() {
@@ -1037,19 +943,18 @@ const app = {
             }
         })
 
-        //CHUYỂN TAB NGHE GẦN ĐÂY / DANH SÁCH PHÁT
+        // //CHUYỂN TAB NGHE GẦN ĐÂY / DANH SÁCH PHÁT
 
-        sideBarNextSong.forEach((tab, index) => {
-            tab.onclick = function() {
-                $('.js__sidebar-nextsong.nextsong__option-wrapper--active').classList.remove('nextsong__option-wrapper--active');
-                tab.classList.add('nextsong__option-wrapper--active');
-                containerPanes[0].style.backgroundColor = "none";
-                containerPanes[1].style.backgroundColor = "none";
-                containerPanes[2].style.backgroundColor = "none";
-                containerPanes[index].style.backgroundColor = "block";
-            }
-        })
-
+        // sideBarNextSong.forEach((tab, index) => {
+        //     tab.onclick = function() {
+        //         $('.js__sidebar-nextsong.nextsong__option-wrapper--active').classList.remove('nextsong__option-wrapper--active');
+        //         tab.classList.add('nextsong__option-wrapper--active');
+        //         containerPanes[0].style.backgroundColor = "none";
+        //         containerPanes[1].style.backgroundColor = "none";
+        //         containerPanes[2].style.backgroundColor = "none";
+        //         containerPanes[index].style.backgroundColor = "block";
+        //     }
+        // })
 
         // CHUYỂN TAB CÁ NHÂN / KHÁM PHÁ / ZINGCHART TRÊN MOBILE
         $$('.js__mobile-tab__item').forEach((tab, index) => {

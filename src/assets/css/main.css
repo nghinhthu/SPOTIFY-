@@ -1573,12 +1573,12 @@
 }
 
 .nextsong__option-wrapper-listplay {
-    width: 120px;
+    width: 240px;
     padding: 0 4px;
 }
 
 .nextsong__option-wrapper-history {
-    width: 110px;
+    width: 220px;
     padding-right: 4px;
 }
 
