@@ -982,6 +982,7 @@ const app = {
                 tabs[1].style.backgroundColor = 'transparent';
                 tabs[2].style.backgroundColor = 'transparent';
                 tabs[3].style.backgroundColor = 'transparent';
+                tabs[4].style.backgroundColor = 'transparent';//
                 tab.style.backgroundColor = `var(--option-color-${backgroundIndex})`;
                 pane.classList.add('active')
                 // if (index === 1) {
